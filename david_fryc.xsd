@@ -1,0 +1,193 @@
+<!-- Odkaz na github: https://github.com/xfryd/znackovaci-jazyky/ -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Kuzelna_konfigurace">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Inventar">
+          <!--Inventař kuželny-->
+
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="seznam-kouli">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="koule" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:integer" name="pocet-kouli"/>
+                          <xs:element type="cena" name="hodnota"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:integer" name="vaha" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="seznam-bot">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="par-bot" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:integer" name="pocet-paru"/>
+                          <xs:element type="cena" name="cena-vypujcky"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:integer" name="velikost" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="kuzelky" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:integer" name="pocet-sad"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="taga" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:integer" name="pocet-tag"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="napoje">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="napoj" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:integer" name="pocet-lahvi"/>
+                        </xs:sequence>
+                        <xs:attribute type="binary" name="alko" use="required"/>
+                        <xs:attribute type="xs:string" name="znacka" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="jidla">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="jidlo" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:integer" name="kusu"/>
+                        </xs:sequence>
+                        <xs:attribute type="cena" name="cena-jidla" use="required"/>
+                        <xs:attribute type="xs:string" name="druh" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Konec inventáře -->
+        <xs:element name="tabulka-prav">
+          <!-- Nastavení práv -->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pravo" maxOccurs="unbounded" minOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="oprav" name="mira-opravneni"/>
+                    <xs:element type="binary" name="pridat-inv"/>
+                    <xs:element type="binary" name="smazat-inv"/>
+                    <xs:element type="binary" name="upravit-inv"/>
+                    <xs:element type="binary" name="pridat-sekci"/>
+                    <xs:element type="binary" name="smazat-sekci"/>
+                    <xs:element type="binary" name="upravit-sekci"/>
+                    <xs:element type="binary" name="pridat-uzivatele"/>
+                    <xs:element type="binary" name="smazat-uzivatele"/>
+                    <xs:element type="binary" name="upravit-uzivatele"/>
+                    <xs:element type="binary" name="opravnit-uzivatele"/>
+                    <xs:element type="binary" name="pridat-rezervaci"/>
+                    <xs:element type="binary" name="smazat-rezervaci"/>
+                    <xs:element type="binary" name="upravit-rezervaci"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="Pnazev" use="required"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!-- Konec Nastavení práv -->
+        <xs:element name="sekce" maxOccurs="unbounded" minOccurs="0">
+          <!-- Nastavení sekce -->
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element type="pop" name="Popis"/>
+              <xs:element type="kap" name="Kapacita"/>
+              <xs:element name="Seznam-uzivatelu">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="osoba" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="Jmeno"/>
+                          <xs:element type="xs:string" name="Prijmeni"/>
+                          <xs:element type="xs:string" name="Login"/>
+                          <xs:element type="oprav" name="Pravomoce"/>
+                          <xs:element type="rezer" name="Rezervace"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="id" use="required"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="Snazev" use="required"/>
+            <xs:attribute type="xs:integer" name="Kapacita" use="required"/>
+          </xs:complexType>
+        </xs:element>
+        <!-- Konec nastavení sekce práv -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- Nastavení omezení -->
+  <xs:simpleType name="binary">
+    <!-- Omezení zapnuto/vypnuto -->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="oprav">
+    <!-- Omezení nastavení oprávnění-->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="pop">
+    <!-- Omezení nastavení popisu sekce-->
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="150"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="kap">
+    <!-- Omezení nastavení oprávnění-->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="rezer" mixed="true">
+    <!-- Omezení nastavení rezervací-->
+    <xs:attribute name="plno" type="xs:dateTime"/>
+    <xs:attribute name="prazdno" type="xs:positiveInteger"/>
+  </xs:complexType>
+  <xs:simpleType name="cena">
+    <!-- Omezení nastavení cen-->
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="50000"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

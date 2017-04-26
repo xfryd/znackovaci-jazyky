@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="david_fryc.xsl"?>
+<!-- Odkaz na github: https://github.com/xfryd/znackovaci-jazyky/ -->
+<Kuzelna_konfigurace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="david_fryc.xsd">
+
+  <!--Inventář kuželny-->
+  <Inventar>
+    <seznam-kouli>
+      <koule vaha="8">
+        <pocet-kouli>3</pocet-kouli>
+        <hodnota>1500</hodnota>
+      </koule>
+      <koule vaha="9">
+        <pocet-kouli>2</pocet-kouli>
+        <hodnota>1600</hodnota>
+      </koule>
+      <koule vaha="10">
+        <pocet-kouli>4</pocet-kouli>
+        <hodnota>1400</hodnota>
+      </koule>
+    </seznam-kouli>
+    <seznam-bot>
+      <par-bot velikost="42">
+        <pocet-paru>2</pocet-paru>
+        <cena-vypujcky>100</cena-vypujcky>
+      </par-bot>
+      <par-bot velikost="43">
+        <pocet-paru>3</pocet-paru>
+        <cena-vypujcky>100</cena-vypujcky>
+      </par-bot>
+      <par-bot velikost="44">
+        <pocet-paru>2</pocet-paru>
+        <cena-vypujcky>100</cena-vypujcky>
+      </par-bot>
+    </seznam-bot>
+    <kuzelky>
+      <pocet-sad>12</pocet-sad>
+    </kuzelky>
+    <taga>
+      <pocet-tag>10</pocet-tag>
+    </taga>
+    <napoje>
+      <napoj alko="0" znacka="cola">
+        <pocet-lahvi>50</pocet-lahvi>
+      </napoj>
+      <napoj alko="0" znacka="soda">
+        <pocet-lahvi>22</pocet-lahvi>
+      </napoj>
+      <napoj alko="1" znacka="rum">
+        <pocet-lahvi>5</pocet-lahvi>
+      </napoj>
+    </napoje>
+    <jidla>
+      <jidlo cena-jidla="30" druh="chlebicky">
+        <kusu>20</kusu>
+      </jidlo>
+      <jidlo cena-jidla="30" druh="parky">
+        <kusu>20</kusu>
+      </jidlo>
+    </jidla>
+
+  </Inventar>
+
+  <!-- Nastavení oprávnění uživatelů -->
+  <tabulka-prav>
+
+    <Pravo Pnazev="Registrovaný uživatel">
+      <mira-opravneni>1</mira-opravneni>
+      <pridat-inv>0</pridat-inv>
+      <smazat-inv>0</smazat-inv>
+      <upravit-inv>0</upravit-inv>
+      <pridat-sekci>0</pridat-sekci>
+      <smazat-sekci>0</smazat-sekci>
+      <upravit-sekci>0</upravit-sekci>
+      <pridat-uzivatele>0</pridat-uzivatele>
+      <smazat-uzivatele>0</smazat-uzivatele>
+      <upravit-uzivatele>0</upravit-uzivatele>
+      <opravnit-uzivatele>0</opravnit-uzivatele>
+      <pridat-rezervaci>1</pridat-rezervaci>
+      <smazat-rezervaci>1</smazat-rezervaci>
+      <upravit-rezervaci>1</upravit-rezervaci>
+    </Pravo>
+    <Pravo Pnazev="Zaměstnanec">
+      <mira-opravneni>2</mira-opravneni>
+      <pridat-inv>1</pridat-inv>
+      <smazat-inv>0</smazat-inv>
+      <upravit-inv>1</upravit-inv>
+      <pridat-sekci>0</pridat-sekci>
+      <smazat-sekci>0</smazat-sekci>
+      <upravit-sekci>1</upravit-sekci>
+      <pridat-uzivatele>1</pridat-uzivatele>
+      <smazat-uzivatele>1</smazat-uzivatele>
+      <upravit-uzivatele>1</upravit-uzivatele>
+      <opravnit-uzivatele>0</opravnit-uzivatele>
+      <pridat-rezervaci>1</pridat-rezervaci>
+      <smazat-rezervaci>1</smazat-rezervaci>
+      <upravit-rezervaci>1</upravit-rezervaci>
+    </Pravo>
+    <Pravo Pnazev="Administrátor">
+      <mira-opravneni>3</mira-opravneni>
+      <pridat-inv>1</pridat-inv>
+      <smazat-inv>1</smazat-inv>
+      <upravit-inv>1</upravit-inv>
+      <pridat-sekci>1</pridat-sekci>
+      <smazat-sekci>1</smazat-sekci>
+      <upravit-sekci>1</upravit-sekci>
+      <pridat-uzivatele>1</pridat-uzivatele>
+      <smazat-uzivatele>1</smazat-uzivatele>
+      <upravit-uzivatele>1</upravit-uzivatele>
+      <opravnit-uzivatele>1</opravnit-uzivatele>
+      <pridat-rezervaci>1</pridat-rezervaci>
+      <smazat-rezervaci>1</smazat-rezervaci>
+      <upravit-rezervaci>1</upravit-rezervaci>
+    </Pravo>
+  </tabulka-prav>
+
+  <!--Sekce 1. -->
+  <sekce Snazev="Dráha 1" Kapacita="9">
+
+    <Popis>Zelená dráha</Popis>
+    <Kapacita>9</Kapacita>
+    <Seznam-uzivatelu>
+      <osoba id="0">
+        <Jmeno>Oliver</Jmeno>
+        <Prijmeni>Klímek</Prijmeni>
+        <Login>Okl01</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="1">
+        <Jmeno>Jaroslav</Jmeno>
+        <Prijmeni>Cermak</Prijmeni>
+        <Login>admin</Login>
+        <Pravomoce>3</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="2">
+        <Jmeno>Bohumír</Jmeno>
+        <Prijmeni>Čížek</Prijmeni>
+        <Login>Bohumir</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="3">
+        <Jmeno>Libor</Jmeno>
+        <Prijmeni>Černý</Prijmeni>
+        <Login>Cerny</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="4">
+        <Jmeno>Michaela</Jmeno>
+        <Prijmeni>Máselníková</Prijmeni>
+        <Login>Maslo</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-08-26T11:50:00</Rezervace>
+      </osoba>
+    </Seznam-uzivatelu>
+  </sekce>
+
+  <!-- Sekce 2. -->
+  <sekce Snazev="Dráha 2" Kapacita="9">
+
+    <Popis>Modrá dráha</Popis>
+    <Kapacita>9</Kapacita>
+    <Seznam-uzivatelu>
+      <osoba id="0">
+        <Jmeno>Oliver</Jmeno>
+        <Prijmeni>Klímek</Prijmeni>
+        <Login>Okl01</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="1">
+        <Jmeno>Jaroslav</Jmeno>
+        <Prijmeni>Cermak</Prijmeni>
+        <Login>admin</Login>
+        <Pravomoce>3</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="2">
+        <Jmeno>Bohumír</Jmeno>
+        <Prijmeni>Čížek</Prijmeni>
+        <Login>Bohumir</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="6">
+        <Jmeno>Václav</Jmeno>
+        <Prijmeni>Maruska</Prijmeni>
+        <Login>VaclavM</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="7">
+        <Jmeno>Marta</Jmeno>
+        <Prijmeni>Vesela</Prijmeni>
+        <Login>Vesela</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-09-26T11:50:00</Rezervace>
+      </osoba>
+    </Seznam-uzivatelu>
+  </sekce>
+
+  <!-- Sekce 3. -->
+  <sekce Snazev="Dráha 3" Kapacita="9">
+
+    <Popis>Červená dráha</Popis>
+    <Kapacita>6</Kapacita>
+    <Seznam-uzivatelu>
+      <osoba id="0">
+        <Jmeno>Oliver</Jmeno>
+        <Prijmeni>Klímek</Prijmeni>
+        <Login>Okl01</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="1">
+        <Jmeno>Jaroslav</Jmeno>
+        <Prijmeni>Cermak</Prijmeni>
+        <Login>admin</Login>
+        <Pravomoce>3</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="2">
+        <Jmeno>Bohumír</Jmeno>
+        <Prijmeni>Čížek</Prijmeni>
+        <Login>Bohumir</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="8">
+        <Jmeno>Soňa</Jmeno>
+        <Prijmeni>Polak</Prijmeni>
+        <Login>Polak</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-06-26T11:50:00</Rezervace>
+      </osoba>
+      <osoba id="9">
+        <Jmeno>Dušan</Jmeno>
+        <Prijmeni>Valenta</Prijmeni>
+        <Login>Zlato</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+    </Seznam-uzivatelu>
+  </sekce>
+
+  <!-- Sekce 4. -->
+  <sekce Snazev="Dráha 4" Kapacita="9">
+
+    <Popis>Žlutá dráha</Popis>
+    <Kapacita>6</Kapacita>
+    <Seznam-uzivatelu>
+      <osoba id="0">
+        <Jmeno>Oliver</Jmeno>
+        <Prijmeni>Klímek</Prijmeni>
+        <Login>Okl01</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="1">
+        <Jmeno>Jaroslav</Jmeno>
+        <Prijmeni>Cermak</Prijmeni>
+        <Login>admin</Login>
+        <Pravomoce>3</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="2">
+        <Jmeno>Bohumír</Jmeno>
+        <Prijmeni>Čížek</Prijmeni>
+        <Login>Bohumir</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="10">
+        <Jmeno>Marian</Jmeno>
+        <Prijmeni>Lanik</Prijmeni>
+        <Login>Laika87</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-06-26T11:50:00</Rezervace>
+      </osoba>
+      <osoba id="11">
+        <Jmeno>Bedřich</Jmeno>
+        <Prijmeni>Kudrna</Prijmeni>
+        <Login>Kudrna</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+    </Seznam-uzivatelu>
+  </sekce>
+
+  <!-- Sekce 5. -->
+  <sekce Snazev="Kulečníkový stůl 1" Kapacita="9">
+
+    <Popis>Stůl na hraní kulečníku.</Popis>
+    <Kapacita>6</Kapacita>
+    <Seznam-uzivatelu>
+      <osoba id="0">
+        <Jmeno>Oliver</Jmeno>
+        <Prijmeni>Klímek</Prijmeni>
+        <Login>Okl01</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="1">
+        <Jmeno>Jaroslav</Jmeno>
+        <Prijmeni>Cermak</Prijmeni>
+        <Login>admin</Login>
+        <Pravomoce>3</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="2">
+        <Jmeno>Bohumír</Jmeno>
+        <Prijmeni>Čížek</Prijmeni>
+        <Login>Bohumir</Login>
+        <Pravomoce>2</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="12">
+        <Jmeno>Vendelín</Jmeno>
+        <Prijmeni>Čech</Prijmeni>
+        <Login>Cech</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace></Rezervace>
+      </osoba>
+      <osoba id="13">
+        <Jmeno>Františka</Jmeno>
+        <Prijmeni>Janiček</Prijmeni>
+        <Login>Janicek1</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-09-26T11:50:00</Rezervace>
+      </osoba>
+      <osoba id="14">
+        <Jmeno>Dalimil</Jmeno>
+        <Prijmeni>Klima</Prijmeni>
+        <Login>Klima2</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-07-30T09:00:00</Rezervace>
+      </osoba>
+      <osoba id="15">
+        <Jmeno>Karel</Jmeno>
+        <Prijmeni>Neruda</Prijmeni>
+        <Login>NRD1</Login>
+        <Pravomoce>1</Pravomoce>
+        <Rezervace>2017-08-14T09:00:00</Rezervace>
+      </osoba>
+    </Seznam-uzivatelu>
+  </sekce>
+</Kuzelna_konfigurace>

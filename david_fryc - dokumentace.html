@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+
+<html lang="cs" xml:lang="cs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- Odkaz na github: https://github.com/xfryd/znackovaci-jazyky/ -->
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="Author" content="David Fryč">
+    <title>Dokumentace - Kuzelna</title>
+    <!--css styl pro tabulky-->
+    <!--<style>
+        table#atributy tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        table#atributy tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table#atributy th {
+            color: white;
+            background-color: black;
+        }
+    </style>
+    <style>
+        table#elementy tr:nth-child(even) {
+            background-color: #eee;
+        }
+
+        table#elementy tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        table#elementy th {
+            color: white;
+            background-color: black;
+        }
+    </style>-->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Kuželna - dokumentace</h1>
+        </header>
+        <nav>
+            <h3>Navigace:</h3>
+            <ul>
+                <li><a href="#uvod">Úvod</a></li>
+                <li><a href="#metodika">Metodika - Použité nástroje</a></li>
+                <li><a href="#popis">Popis elementů a atributů</a></li>
+                <li><a href="#transf">Popis transformace</a></li>
+                <li><a href="#zaver">Závěr</a></li>
+            </ul>
+            <hr />
+        </nav>
+        <main>
+            <section id="uvod">
+                <article>
+                    <header>
+                        <h2>Úvod</h2>
+                    </header>
+                    <p>
+                        Jako téma semestrálního projektu jsem si vybral fiktivní kuželnu.
+                        Toto téma jsem si zvolil, protože kuželky jsou zajímavým sportem, o který je pořád zájem.
+                    </p>
+                    <p>XML soubor slouží k správě inventáře a rezervací, a ke konfiguraci práv jednotlivých uživatelů a konfiguraci jednotlivých sekcí Kuželny.</p>
+                </article>
+            </section>
+            <section id="metodika">
+                <article>
+                    <header>
+                        <h2>Metodika</h2>
+                    </header>
+                    <h3>Využité programy</h3>
+                    <p>
+                        Pro tvorbu tohoto projektu jsem použil programy <a href="http://www.microsoftstore.com/Visual-Studio/2015/">Microsoft Visual Studio 2015</a>, <a href="https://www.behindthename.com/random/"> Behind the name - Random name generator</a>,
+                        a prohlížeče <a href="https://www.microsoft.com/cs-cz/windows/microsoft-edge">Microsoft Edge</a> a <a href="https://www.google.com/chrome/">Google Chrome</a>.
+                    </p>
+                    <h3>Využité webové stránky</h3>
+                    <p>
+                        Většinu informací jsem našel na stránkách <a href="https://www.w3schools.com/">W3Schools</a>, validaci jsem provedl přes
+                        <a href="https://validator.w3.org/">oficální validátor W3</a>
+                    </p>
+                </article>
+            </section>
+            <section id="popis">
+                <article>
+                    <header>
+                        <h2>Popis elementů a atributů</h2>
+                    </header>
+                    <h3>Použité elementy</h3>
+                    <table border="1" id="elementy" title="Tabulka elementů">
+                        <tr>
+                            <td ><b>Název elementů</b></td>
+                            <td ><b>Popis elementů</b></td>
+                            <td ><b>Schématická omezení</b></td>
+                        </tr>
+                        <tr>
+                            <td><b>-----atributy inventáře------</b></td>
+                            <td><b>-----atributy inventáře------</b></td>
+                            <td><b>-----atributy inventáře------</b></td>
+                        </tr>
+                        <tr>
+                            <td>Inventar</td>
+                            <td>Obaluje prvky inventáře</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>seznam-kouli</td>
+                            <td>Obaluje bowlingové koule</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>koule</td>
+                            <td>Obaluje bowlingové koule určité váhy</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>pocet-kouli</td>
+                            <td>Určuje počet koulí dané váhy</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td>hodnota</td>
+                            <td>Určuje hodnotu koulí dané váhy</td>
+                            <td>Číslo od 1 do 50000 (aby ceny nebyly přemrštěné)</td>
+                        </tr>
+                        <tr>
+                            <td>seznam-bot</td>
+                            <td>Obaluje boty</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>par-bot</td>
+                            <td>Obaluje pár bot určité velikosti</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>pocet-paru</td>
+                            <td>Určuje počet párů bot dané velikosti</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td>cena-vypujcky</td>
+                            <td>Určuje cenu zapůjčení páru bot</td>
+                            <td>Číslo od 1 do 50000</td>
+                        </tr>
+                        <tr>
+                            <td>kuzelky</td>
+                            <td>Obaluje počet sad kuželek</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>pocet-sad</td>
+                            <td>Určuje počet sad kuželek</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td>taga</td>
+                            <td>Obaluje počet tág</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>pocet-tag</td>
+                            <td>Určuje počet tág</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td>napoje</td>
+                            <td>Obaluje nápoje</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>napoj</td>
+                            <td>Obaluje nápoje určité značky</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>pocet-lahvi</td>
+                            <td>Určuje počet lahví určité značky</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td>jidla</td>
+                            <td>Obaluje jídla</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>jidlo</td>
+                            <td>Obaluje jídlo určitého druhu</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>kusu</td>
+                            <td>Určuje počet kusů daného jídla</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td><b>-----atributy oprávnění------</b></td>
+                            <td><b>-----atributy oprávnění------</b></td>
+                            <td><b>-----atributy oprávnění------</b></td>
+                        </tr>
+                        <tr>
+                            <td>tabulka-prav</td>
+                            <td>Obaluje nastavení pravomocí uživatelů</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>Pravo</td>
+                            <td>Obaluje a identifikuje za pomoci atributu PNazev jednotlivé pravomoce</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>mira-opravneni</td>
+                            <td>Určuje identifikační číslo oprávnění pro snadné přiřazení oprávnění uživateli</td>
+                            <td> 1, 2, 3</td>
+                        </tr>
+                        <tr>
+                            <td>pridat-inv</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k přidání položek v inventáři</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>smazat-inv</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k smazání položek v inventáři</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>upravit-inv</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k úpravě položek v inventáři</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>pridat-sekci</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k přidání sekce</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>smazat-sekci</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k smazání sekce</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>upravit-sekci</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k úpravě sekce</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>pridat-uzivatele</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k přidání uživatele</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>smazat-uzivatele</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k smazání uživatele</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>upravit-uzivatele</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k úpravě údajů o živateli</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>opravnit-uzivatele</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k přiřazení nebo změně oprávění uživatele</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>pridat-rezervaci</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k přidání rezervace</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>smazat-rezervaci</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení k smazání rezervace</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td>upravit-rezervaci</td>
+                            <td>Určuje zda uživatel s tímto oprávněním má povolení úpravě rezervace</td>
+                            <td>0, 1</td>
+                        </tr>
+                        <tr>
+                            <td><b>-----atributy sekcí------</b></td>
+                            <td><b>-----atributy sekcí------</b></td>
+                            <td><b>-----atributy sekcí------</b></td>
+                        </tr>
+                        <tr>
+                            <td>Sekce</td>
+                            <td>Obaluje nastavení jednotlivých sekcí Kuželny</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>Popis</td>
+                            <td>Určuje popis a charakteristiku dané sekce</td>
+                            <td>Minimálně 10 znaků, maximálně 150 znaků</td>
+                        </tr>
+                        <tr>
+                            <td>Kapacita</td>
+                            <td>Určuje kapacitu dané sekce</td>
+                            <td>Číslo od 1 do 50</td>
+                        </tr>
+                        <tr>
+                            <td>Seznam-uzivatelu</td>
+                            <td>Obaluje uživatele</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>osoba</td>
+                            <td>Obaluje nastavení jednotlivých osob v dané sekci, a identifikuje osoby pomocí atributu id</td>
+                            <td>Bez omezení (obal)</td>
+                        </tr>
+                        <tr>
+                            <td>Jmeno</td>
+                            <td>Určuje jméno uživatele</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Prijmeni</td>
+                            <td>Určuje příjmení uživatele</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Login</td>
+                            <td>Určuje přihlašovací jméno uživatele</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Pravomoce</td>
+                            <td>Určuje míru oprávnění uživatele v dané sekci</td>
+                            <td> 1, 2, 3 (odvíjí se od elementu mira-opravneni)</td>
+                        </tr>
+                        <tr>
+                            <td>Rezervace</td>
+                            <td>Určuje rezervace, které uživatel udělal</td>
+                            <td>Buď prázdné nebo dateTime omezení</td>
+                        </tr>
+                    </table>
+
+                    <h3>Použité atributy</h3>
+                    <table border="1" id="atributy" title="Tabulka atributů">
+                        <tr>
+                            <td><b>Název atributu</b></td>
+                            <td><b>Popis atributu</b></td>
+                            <td><b>Integritní omezení</b></td>
+                        </tr>
+                        <tr>
+                            <td >vaha</td>
+                            <td>Určuje váhu koule</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td >velikost</td>
+                            <td>Určuje velikost bot</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td>alko</td>
+                            <td>Určuje zda-li je nápoj aloholický</td>
+                            <td>0,1</td>
+                        </tr>
+                        <tr>
+                            <td>znacka</td>
+                            <td>Určuje značku daného nápoje</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td>cena-jidla</td>
+                            <td>Určuje cenu daného jídla</td>
+                            <td>Číslo od 1 do 50000</td>
+                        </tr>
+                        <tr>
+                            <td>druh</td>
+                            <td>Určuje druh daného jídla</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Snazev</td>
+                            <td>Určuje název dané sekce</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td>Kapacita</td>
+                            <td>Určuje kapacitu dané sekce</td>
+                            <td>Integer omezení</td>
+                        </tr>
+                        <tr>
+                            <td >Pnazev</td>
+                            <td>Určuje název daného oprávnění</td>
+                            <td>String omezení</td>
+                        </tr>
+                        <tr>
+                            <td >id</td>
+                            <td>Určuje identifikační číslo dané osoby</td>
+                            <td>String omezení</td>
+                        </tr>
+                        
+                    </table>
+
+                </article>
+            </section>
+
+            <section id="transf">
+                <article>
+                    <header>
+                        <h2>Popis transformace</h2>
+                    </header>
+                    <p>
+                        Transformace pomocí cyklu <code>for-each</code> vybere, a udělá tabulku pro každou sekci,
+                        kterou potom zaplní všemi rezervacemi v dané sekci a seřadí je podle data.
+                    </p>
+                </article>
+            </section>
+            <section id="zaver">
+                <article>
+                    <header>
+                        <h2>Závěr</h2>
+                    </header>
+                    <p>
+                        Rád jsem si vyzkoušel práci s xml, html a xsl. Překvapilo mně, že Opera a Chrome standardně
+                        nespouštějí soubory z lokálních zdroju, když to v nich chcete udělat, tak se musí spustit s <code>--allow-file-access-from-files</code> argumentem.
+                        Při větším rozsahu práce by bylo třeba udělat konkrétné omezení na všechny druhy elementů, aby byla aplikace správně zabezpečená.
+                    </p>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p>Autor: <strong>David Fryč</strong> | Česká Zemědělská univerzita Praha, dne 25.4.2017</p>
+        </footer>
+    </div>
+</body>
+</html>
